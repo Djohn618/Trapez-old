@@ -110,7 +110,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .loading-logo img {
   width: 100%;
-  filter: brightness(0) invert(1);
 }
 
 .loading-text {
@@ -186,7 +185,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .nav-logo img {
   width: 52px;
   height: auto;
-  filter: brightness(0) invert(1);
 }
 .nav-logo-text {
   font-family: var(--font-head);
@@ -317,6 +315,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: absolute;
   inset: 0;
   overflow: hidden;
+}
+.hero-video-wrap video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 177.78vh; /* 16/9 * 100vh */
+  height: 100vh;
+  min-width: 100%;
+  min-height: 56.25vw;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  object-fit: cover;
 }
 .hero-video-wrap iframe {
   position: absolute;
@@ -825,6 +835,22 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 @media (max-width: 600px) {
   .form-grid { grid-template-columns: 1fr; }
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 1rem; /* prevent iOS zoom on focus */
+    padding: 16px 14px;
+  }
+  .form-submit {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .form-submit .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 18px;
+  }
+  .form-note { justify-content: center; }
 }
 
 /* --- AMBIENTE SECTION -------------------------------------- */
@@ -1245,7 +1271,6 @@ footer {
 }
 .footer-logo img {
   width: 44px;
-  filter: brightness(0) invert(1);
   opacity: 0.85;
 }
 .footer-logo-name {
@@ -1379,7 +1404,6 @@ footer {
 .special-page-logo {
   width: 80px;
   margin: 0 auto 32px;
-  filter: brightness(0) invert(1);
   animation: fadeInDown 0.8s ease both;
 }
 
@@ -1482,4 +1506,158 @@ footer {
 @media (max-width: 900px) {
   .container { padding: 0 20px; }
   .section-padding { padding: 72px 0; }
+}
+
+/* --- LOGO DISPLAY ------------------------------------------ */
+/* Logo has opaque white background — display naturally on all bg */
+.loading-logo {
+  background: rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 12px;
+}
+.nav-logo img {
+  border-radius: 4px;
+  background: rgba(255,255,255,0.9);
+}
+.footer-logo img {
+  border-radius: 3px;
+  background: rgba(255,255,255,0.85);
+}
+.special-page-logo {
+  border-radius: 6px;
+  background: rgba(255,255,255,0.9);
+  padding: 6px;
+}
+
+/* --- ENHANCED HOVER ANIMATIONS ----------------------------- */
+
+/* Tab buttons */
+.tab-btn {
+  position: relative;
+  overflow: hidden;
+}
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(106,46,43,0.06);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.tab-btn:hover::after { opacity: 1; }
+.tab-btn:not(.active):hover {
+  transform: translateY(-2px);
+}
+
+/* Footer links hover */
+.footer-links li {
+  transition: transform 0.25s ease;
+}
+.footer-links li:hover {
+  transform: translateX(4px);
+}
+
+/* Stat items already have hover; add transform too */
+.stat-item:hover {
+  transform: translateY(-3px);
+}
+
+/* Kontakt info block hover */
+.kontakt-info-block {
+  transition: transform var(--transition);
+}
+.kontakt-info-block:hover {
+  transform: translateX(4px);
+}
+
+/* Review card */
+.review-card {
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+/* Nav logo hover */
+.nav-logo {
+  transition: transform var(--transition), opacity var(--transition);
+}
+.nav-logo:hover {
+  transform: scale(1.04);
+  opacity: 0.9;
+}
+
+/* Lang toggle */
+.lang-toggle {
+  transition: var(--transition), transform 0.25s;
+}
+.lang-toggle:hover {
+  transform: scale(1.05);
+}
+
+/* Gallery amb-item: subtle lift on hover */
+.amb-item {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.amb-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  z-index: 2;
+}
+
+/* Aktuell card — shine sweep on hover */
+.aktuell-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255,255,255,0.18) 50%,
+    transparent 100%
+  );
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+.aktuell-card:hover::before { left: 150%; }
+
+/* Menu item hover — gold left border */
+.menu-item {
+  border-left: 2px solid transparent;
+  padding-left: 8px;
+  transition: var(--transition), border-color 0.25s;
+}
+.menu-item:hover {
+  border-left-color: var(--gold);
+}
+
+/* Checkmark circle on thank-you: pulse on appear */
+.checkmark-circle:hover {
+  border-color: var(--gold);
+}
+
+/* --- MOBILE FIRST IMPROVEMENTS ----------------------------- */
+@media (max-width: 480px) {
+  .hero-title { font-size: clamp(2rem, 10vw, 3rem); }
+  .hero-buttons { flex-direction: column; align-items: stretch; }
+  .hero-buttons .btn { text-align: center; justify-content: center; }
+
+  .angebot-tabs { gap: 6px; }
+  .tab-btn { padding: 10px 16px; font-size: 0.75rem; }
+
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  .stat-value { font-size: 1.6rem; }
+
+  .about-layout { gap: 32px; }
+
+  .reviews-grid { grid-template-columns: 1fr; }
+
+  .footer-inner { gap: 24px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  .section-header { margin-bottom: 40px; }
+}
+
+@media (max-width: 360px) {
+  .btn { padding: 13px 20px; font-size: 0.78rem; }
+  .form-input, .form-select, .form-textarea { padding: 14px 12px; }
 }
