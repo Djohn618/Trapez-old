@@ -84,21 +84,16 @@
 
   <!-- Video Background -->
   <div class="hero-video-wrap" aria-hidden="true">
-    <!--
-      NOTE FOR OWNER: Replace VIDEO_ID below with your preferred
-      YouTube pizza-making video ID (e.g. bFQTlNWNqNo)
-      The video must be set to allow embedding.
-      Example: src="https://www.youtube.com/embed/bFQTlNWNqNo?..."
-    -->
     <div class="hero-fallback"></div>
-    <iframe
-      src="assets/video/YTDown.com_YouTube_I-shot-this-PIZZA-COMMERCIAL-in-only-2-H_Media_105QbXoUTmk_001_1080p.mp4"
-      title="Pizza Making Background Video"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen
-      loading="lazy"
-    ></iframe>
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+    >
+      <source src="assets/video/YTDown.com_YouTube_I-shot-this-PIZZA-COMMERCIAL-in-only-2-H_Media_105QbXoUTmk_001_1080p.mp4" type="video/mp4" />
+    </video>
   </div>
 
   <!-- Content -->

@@ -59,9 +59,9 @@
     <!-- Pizza emoji -->
     <div class="pizza-404" role="img" aria-label="Pizza">🍕</div>
 
-    <h1 class="special-page-title">Hoppla! Diese Seite existiert nicht.</h1>
+    <h1 class="special-page-title" id="notfound-title">Hoppla! Diese Seite existiert nicht.</h1>
 
-    <p class="special-page-text">
+    <p class="special-page-text" id="notfound-text">
       Es scheint, dass die Seite, die Sie suchen, nicht gefunden wurde.
       Vielleicht war es unsere Geheimrezeptur? 😄<br /><br />
       Aber keine Sorge — unsere Küche ist geöffnet und wir freuen uns auf Ihren Besuch.
@@ -69,8 +69,8 @@
 
     <!-- Action links -->
     <div class="links-404">
-      <a href="index.html" class="btn btn-primary">Zur Startseite</a>
-      <a href="index.html#reservieren" class="btn btn-outline">Tisch Reservieren</a>
+      <a href="index.html" class="btn btn-primary" id="notfound-btn1">Zur Startseite</a>
+      <a href="index.html#reservieren" class="btn btn-outline" id="notfound-btn2">Tisch Reservieren</a>
     </div>
 
     <!-- Contact hint -->
@@ -81,5 +81,39 @@
     </p>
 
   </main>
+
+  <script>
+    (function () {
+      var lang;
+      try { lang = localStorage.getItem('trapez-lang') || 'de'; } catch (e) { lang = 'de'; }
+      var t = {
+        de: {
+          title: 'Hoppla! Diese Seite existiert nicht.',
+          text: 'Es scheint, dass die Seite, die Sie suchen, nicht gefunden wurde. Vielleicht war es unsere Geheimrezeptur? 😄\n\nAber keine Sorge — unsere Küche ist geöffnet und wir freuen uns auf Ihren Besuch.',
+          btn1: 'Zur Startseite',
+          btn2: 'Tisch Reservieren'
+        },
+        en: {
+          title: "Oops! This page doesn't exist.",
+          text: "It seems the page you're looking for couldn't be found. Maybe it was our secret recipe? 😄\n\nBut don't worry — our kitchen is open and we look forward to your visit.",
+          btn1: 'Back to Home',
+          btn2: 'Make a Reservation'
+        }
+      };
+      var d = t[lang] || t['de'];
+      document.documentElement.lang = lang;
+      var titleEl = document.getElementById('notfound-title');
+      if (titleEl) titleEl.textContent = d.title;
+      var textEl = document.getElementById('notfound-text');
+      if (textEl) {
+        var parts = d.text.split('\n\n');
+        textEl.innerHTML = parts.map(function(p){ return p.replace(/\n/g,'<br/>'); }).join('<br/><br/>');
+      }
+      var btn1El = document.getElementById('notfound-btn1');
+      if (btn1El) btn1El.textContent = d.btn1;
+      var btn2El = document.getElementById('notfound-btn2');
+      if (btn2El) btn2El.textContent = d.btn2;
+    })();
+  </script>
 </body>
 </html>
