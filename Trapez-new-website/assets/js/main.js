@@ -216,7 +216,7 @@ function applyLanguage(lang) {
   if (t.pdf) {
     setTextById('pdf-label', t.pdf.label);
     setTextById('pdf-speisekarte-title', t.pdf.speisekarte);
-    setTextById('pdf-speisekarte-desc', t.pdf.speisekartDesc);
+    setTextById('pdf-speisekarte-desc', t.pdf.speisekarteDesc);
     setTextById('pdf-speisekarte-btn', t.pdf.download);
     setTextById('pdf-getraenke-title', t.pdf.getraenke);
     setTextById('pdf-getraenke-desc', t.pdf.getraenkeDesc);
