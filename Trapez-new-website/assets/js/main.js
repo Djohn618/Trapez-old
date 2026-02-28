@@ -113,16 +113,37 @@ function highlightActiveSection() {
 function initLanguage() {
   applyLanguage(currentLang);
 
-  const btn = document.getElementById('lang-toggle');
-  if (btn) {
-    btn.addEventListener('click', () => {
-      const cycle = ['de', 'en', 'it', 'fr'];
-      const idx = cycle.indexOf(currentLang);
-      currentLang = cycle[(idx + 1) % cycle.length];
+  const toggle = document.getElementById('lang-toggle');
+  const langMenu = document.getElementById('lang-menu');
+
+  // Toggle dropdown open/close
+  toggle?.addEventListener('click', e => {
+    e.stopPropagation();
+    const isOpen = langMenu.classList.contains('open');
+    langMenu.classList.toggle('open', !isOpen);
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  // Close dropdown on outside click
+  document.addEventListener('click', e => {
+    const dropdown = document.querySelector('.lang-dropdown');
+    if (!dropdown?.contains(e.target)) {
+      langMenu?.classList.remove('open');
+      toggle?.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Handle language selection
+  document.querySelectorAll('.lang-option').forEach(opt => {
+    opt.addEventListener('click', e => {
+      e.stopPropagation();
+      currentLang = opt.dataset.lang;
       localStorage.setItem('trapez-lang', currentLang);
       applyLanguage(currentLang);
+      langMenu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
     });
-  }
+  });
 }
 
 function applyLanguage(lang) {
@@ -134,12 +155,12 @@ function applyLanguage(lang) {
   // Update lang attribute
   document.documentElement.lang = lang;
 
-  // Update lang toggle button text
-  const btn = document.getElementById('lang-toggle');
-  if (btn) {
-    const nextLang = { de: 'EN', en: 'IT', it: 'FR', fr: 'DE' };
-    btn.querySelector('[data-lang-label]').textContent = nextLang[lang] || 'EN';
-  }
+  // Update lang toggle button text and active option
+  const langLabel = document.getElementById('current-lang-label');
+  if (langLabel) langLabel.textContent = lang.toUpperCase();
+  document.querySelectorAll('.lang-option').forEach(opt => {
+    opt.classList.toggle('active', opt.dataset.lang === lang);
+  });
 
   // Nav links
   setTextById('nav-home', t.nav.home);

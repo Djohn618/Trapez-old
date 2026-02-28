@@ -13,7 +13,7 @@ const menuData = {
       categories: [
         {
           id: "pizza",
-          title: "Pizze / Pizza",
+          title: "Pizza",
           image: "assets/images/speisekarte/Margherita.png",
           items: [
             { name: "Margherita", desc: "Tomatensauce, Mozzarella, Basilikum", price: "Fr. 16.50" },
@@ -41,7 +41,7 @@ const menuData = {
         },
         {
           id: "fleisch",
-          title: "Carni / Fleisch",
+          title: "Fleisch",
           image: "assets/images/speisekarte/carni.png",
           items: [
             { name: "Saltimbocca alla Romana", desc: "Kalbsschnitzel mit Salbei und Parmaschinken", price: "Fr. 34.50" },
@@ -52,7 +52,7 @@ const menuData = {
         },
         {
           id: "fisch",
-          title: "Pesce / Fisch",
+          title: "Fisch",
           image: "assets/images/speisekarte/fish.png",
           items: [
             { name: "Branzino al Forno", desc: "Ofengebackener Wolfsbarsch mit Zitronen-Kräutern", price: "Fr. 36.50" },
@@ -62,7 +62,7 @@ const menuData = {
         },
         {
           id: "suppen",
-          title: "Zuppe / Suppen",
+          title: "Suppen",
           image: "assets/images/speisekarte/Suppe-new.png",
           items: [
             { name: "Minestrone Maison", desc: "Hausgemachte Gemüsesuppe", price: "Fr. 8.50" },
@@ -73,7 +73,7 @@ const menuData = {
         },
         {
           id: "salate",
-          title: "Insalate / Salate",
+          title: "Salate",
           image: "assets/images/speisekarte/ceaser salad.png",
           items: [
             { name: "Insalata Mista", desc: "Gemischter Salat mit Hausdressing", price: "Fr. 9.00" },
@@ -84,7 +84,7 @@ const menuData = {
         },
         {
           id: "antipasti",
-          title: "Antipasti / Vorspeisen",
+          title: "Vorspeisen",
           image: "assets/images/speisekarte/vorspeise.png",
           items: [
             { name: "Antipasto Misto", desc: "Gemischte italienische Vorspeisen", price: "Fr. 18.50" },
@@ -95,7 +95,7 @@ const menuData = {
         },
         {
           id: "dolci",
-          title: "Dolci / Dessert",
+          title: "Dessert",
           image: "assets/images/speisekarte/tiramisu-dessert.png",
           items: [
             { name: "Tiramisù", desc: "Klassisches hausgemachtes Tiramisù", price: "Fr. 9.50" },
@@ -122,7 +122,7 @@ const menuData = {
         {
           id: "weine",
           image: "assets/images/Getränke/Vino della Casa Bianco.png",
-          title: "Vini / Weine",
+          title: "Weine",
           items: [
             { name: "Vino della Casa Bianco", desc: "Hauswein weiss, 1dl", price: "Fr. 5.50" },
             { name: "Vino della Casa Rosso", desc: "Hauswein rot, 1dl", price: "Fr. 5.50" },
@@ -134,7 +134,7 @@ const menuData = {
         {
           id: "bier",
           image: "assets/images/Getränke/Bier vom Fass.png",
-          title: "Birra / Bier",
+          title: "Bier",
           items: [
             { name: "Bier vom Fass", desc: "0.3 lt", price: "Fr. 4.50" },
             { name: "Bier vom Fass", desc: "0.5 lt", price: "Fr. 6.50" },
@@ -145,7 +145,7 @@ const menuData = {
         {
           id: "mineral",
           image: "assets/images/Getränke/Hausgemachter Zitronensirup.png",
-          title: "Acqua / Mineralwasser",
+          title: "Mineralwasser",
           items: [
             { name: "Hausgemachter Zitronensirup", desc: "Mit Mineralwasser", price: "Fr. 4.50" },
             { name: "Mineral still", desc: "5dl Flasche", price: "Fr. 4.00" },
@@ -156,7 +156,7 @@ const menuData = {
         {
           id: "kaffee",
           image: "assets/images/Getränke/Espresso.png",
-          title: "Caffè / Kaffee",
+          title: "Kaffee",
           items: [
             { name: "Espresso", desc: "Einzeln", price: "Fr. 3.50" },
             { name: "Caffè Latte", desc: "Grosser Kaffee mit Milch", price: "Fr. 5.00" },
@@ -300,7 +300,7 @@ const menuData = {
         },
         {
           id: "antipasti",
-          title: "Antipasti / Starters",
+          title: "Starters",
           image: "assets/images/speisekarte/vorspeise.png",
           items: [
             { name: "Antipasto Misto", desc: "Mixed Italian starters", price: "Fr. 18.50" },
