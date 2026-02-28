@@ -561,7 +561,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .btn-dark {
-  background: #1F1A18;
+  background: var(--dark);
   color: var(--white);
 }
 .btn-dark:hover {
@@ -782,7 +782,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* --- RESERVIEREN SECTION ----------------------------------- */
 #reservieren {
-  background: #0e0c0a;
+  background: var(--dark);
   position: relative;
   overflow: hidden;
 }

@@ -125,9 +125,12 @@ function initLanguage() {
   });
 
   // Close dropdown on outside click
-  document.addEventListener('click', () => {
-    langMenu?.classList.remove('open');
-    toggle?.setAttribute('aria-expanded', 'false');
+  document.addEventListener('click', e => {
+    const dropdown = document.querySelector('.lang-dropdown');
+    if (!dropdown?.contains(e.target)) {
+      langMenu?.classList.remove('open');
+      toggle?.setAttribute('aria-expanded', 'false');
+    }
   });
 
   // Handle language selection
