@@ -14,7 +14,7 @@
   <meta property="og:type" content="website" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -61,12 +61,21 @@
       <li role="none"><a id="nav-ueber-uns"   class="nav-link" href="#ueber-uns"   role="menuitem">Über Uns</a></li>
       <li role="none"><a id="nav-kontakt"     class="nav-link" href="#kontakt"     role="menuitem">Kontakt</a></li>
 
-      <!-- Language Toggle (inside mobile menu too) -->
+      <!-- Language Dropdown -->
       <li role="none">
-        <button id="lang-toggle" class="lang-toggle" aria-label="Sprache wechseln" title="Switch Language">
-          <span class="lang-icon">🌐</span>
-          <span data-lang-label>EN</span>
-        </button>
+        <div class="lang-dropdown">
+          <button id="lang-toggle" class="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Sprache wählen">
+            <span class="lang-icon">🌐</span>
+            <span id="current-lang-label">DE</span>
+            <span class="lang-arrow">▾</span>
+          </button>
+          <ul class="lang-menu" role="listbox" id="lang-menu" aria-label="Sprache wählen">
+            <li role="option" class="lang-option active" data-lang="de">🇩🇪 Deutsch</li>
+            <li role="option" class="lang-option" data-lang="en">🇬🇧 English</li>
+            <li role="option" class="lang-option" data-lang="it">🇮🇹 Italiano</li>
+            <li role="option" class="lang-option" data-lang="fr">🇫🇷 Français</li>
+          </ul>
+        </div>
       </li>
     </ul>
 
@@ -368,7 +377,7 @@
   <div class="container">
 
     <div class="section-header reveal">
-      <span class="section-label" style="color:var(--gold);">Galerie</span>
+      <span class="section-label" style="color:var(--gold);">Unsere Räumlichkeiten</span>
       <h2 class="section-title" id="ambiente-title" style="color:var(--white);">Ambiente</h2>
       <p class="section-subtitle" id="ambiente-subtitle" style="color:rgba(255,255,255,0.6);">
         Tauchen Sie ein in die warme, elegante Atmosphäre unseres Restaurants
@@ -455,7 +464,7 @@
         <div class="section-header reveal">
           <span class="section-label">Die Geschichte</span>
           <h2 class="section-title" id="ueber-uns-title">Über Uns</h2>
-          <h3 class="section-subtitle" id="ueber-uns-subtitle" style="font-family:var(--font-head);font-size:1.3rem;color:var(--secondary);font-style:italic;">Unsere Geschichte</h3>
+          <h3 class="section-subtitle" id="ueber-uns-subtitle" style="font-family:var(--font-head);font-size:1.3rem;color:var(--gold);font-style:italic;">Unsere Geschichte</h3>
           <div class="divider" style="margin-left:0;"></div>
         </div>
 
@@ -512,7 +521,7 @@
   <div class="container">
 
     <div class="section-header reveal">
-      <span class="section-label">Kontakt</span>
+      <span class="section-label">Uns besuchen</span>
       <h2 class="section-title" id="kontakt-title">Kontakt</h2>
       <p class="section-subtitle" id="kontakt-subtitle">Wir sind für Sie da</p>
       <div class="divider"></div>
