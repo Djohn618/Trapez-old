@@ -101,7 +101,7 @@
     <p class="hero-label" id="hero-label">Authentische Küche. Unvergessliche Momente.</p>
 
     <h1 class="hero-title" id="hero-title">
-      <em>La Cucina</em><br>Italiana
+      Restaurant<br><em>Trapez</em>
     </h1>
 
     <p class="hero-subtitle" id="hero-subtitle">
@@ -111,6 +111,7 @@
     <div class="hero-buttons">
       <a id="hero-cta1" class="btn btn-primary" href="#reservieren">Tisch Reservieren</a>
       <a id="hero-cta2" class="btn btn-outline" href="#angebot">Speisekarte</a>
+      <a id="hero-cta3" class="btn btn-gold" href="#angebot" data-tab-target="tagesmenue">Tagesmenü</a>
     </div>
   </div>
 
@@ -128,9 +129,8 @@
   <div class="container">
 
     <div class="section-header reveal">
-      <span class="section-label">Unser Angebot</span>
+      <span class="section-label" id="angebot-label">La Nostra Cucina</span>
       <h2 class="section-title" id="angebot-title">Unser Angebot</h2>
-      <div class="divider"></div>
     </div>
 
     <!-- Tabs -->
@@ -159,6 +159,27 @@
     <!-- Tab: Tagesmenü -->
     <div id="tab-tagesmenue" class="tab-panel" role="tabpanel" aria-labelledby="tab-tagesmenue-label">
       <div id="tagesmenue-content"></div>
+    </div>
+
+    <!-- PDF Downloads -->
+    <div class="pdf-downloads reveal">
+      <div class="pdf-divider">
+        <span class="pdf-divider-label" id="pdf-label">Menükarten als PDF</span>
+      </div>
+      <div class="pdf-cards">
+        <div class="pdf-card reveal">
+          <div class="pdf-card-icon">&#128196;</div>
+          <h3 class="pdf-card-title" id="pdf-speisekarte-title">Speisekarte</h3>
+          <p class="pdf-card-desc" id="pdf-speisekarte-desc">Unsere vollständige Speisekarte als PDF</p>
+          <a href="assets/pdf/speisekarte.pdf" class="btn btn-outline-menu" id="pdf-speisekarte-btn" target="_blank" rel="noopener">PDF herunterladen</a>
+        </div>
+        <div class="pdf-card reveal reveal-delay-1">
+          <div class="pdf-card-icon">&#127863;</div>
+          <h3 class="pdf-card-title" id="pdf-getraenke-title">Getränkekarte</h3>
+          <p class="pdf-card-desc" id="pdf-getraenke-desc">Unsere vollständige Getränkekarte als PDF</p>
+          <a href="assets/pdf/getraenke.pdf" class="btn btn-outline-menu" id="pdf-getraenke-btn" target="_blank" rel="noopener">PDF herunterladen</a>
+        </div>
+      </div>
     </div>
 
   </div>

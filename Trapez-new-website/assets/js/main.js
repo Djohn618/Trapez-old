@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGallery();
   initScrollReveal();
   initFormspree();
+  initHeroCta3();
 });
 
 /* ---------------------------------------------------------- */
@@ -115,7 +116,9 @@ function initLanguage() {
   const btn = document.getElementById('lang-toggle');
   if (btn) {
     btn.addEventListener('click', () => {
-      currentLang = currentLang === 'de' ? 'en' : 'de';
+      const cycle = ['de', 'en', 'it', 'fr'];
+      const idx = cycle.indexOf(currentLang);
+      currentLang = cycle[(idx + 1) % cycle.length];
       localStorage.setItem('trapez-lang', currentLang);
       applyLanguage(currentLang);
     });
@@ -134,8 +137,8 @@ function applyLanguage(lang) {
   // Update lang toggle button text
   const btn = document.getElementById('lang-toggle');
   if (btn) {
-    const opposite = lang === 'de' ? 'EN' : 'DE';
-    btn.querySelector('[data-lang-label]').textContent = opposite;
+    const nextLang = { de: 'EN', en: 'IT', it: 'FR', fr: 'DE' };
+    btn.querySelector('[data-lang-label]').textContent = nextLang[lang] || 'EN';
   }
 
   // Nav links
@@ -151,9 +154,11 @@ function applyLanguage(lang) {
   setTextById('hero-subtitle', t.hero.subtitle);
   setTextById('hero-cta1', t.hero.cta1);
   setTextById('hero-cta2', t.hero.cta2);
+  if (t.hero.cta3) setTextById('hero-cta3', t.hero.cta3);
 
   // Angebot
   setTextById('angebot-title', t.angebot.title);
+  setTextById('angebot-label', t.angebot.title);
   setTextById('tab-speisekarte-label', t.angebot.tabs.speisekarte);
   setTextById('tab-getraenkkarte-label', t.angebot.tabs.getraenkkarte);
   setTextById('tab-aktuell-label', t.angebot.tabs.aktuell);
@@ -206,6 +211,17 @@ function applyLanguage(lang) {
   setTextById('stat-years-label', t.kontakt.stats.years.label);
   setTextById('reviews-title', t.kontakt.reviewsTitle);
   renderReviews(t.kontakt.reviews);
+
+  // PDF Downloads
+  if (t.pdf) {
+    setTextById('pdf-label', t.pdf.label);
+    setTextById('pdf-speisekarte-title', t.pdf.speisekarte);
+    setTextById('pdf-speisekarte-desc', t.pdf.speisekarteDesc);
+    setTextById('pdf-speisekarte-btn', t.pdf.download);
+    setTextById('pdf-getraenke-title', t.pdf.getraenke);
+    setTextById('pdf-getraenke-desc', t.pdf.getraenkeDesc);
+    setTextById('pdf-getraenke-btn', t.pdf.download);
+  }
 
   // Footer
   setTextById('footer-tagline', t.footer.tagline);
@@ -277,18 +293,24 @@ function renderCardMenu(containerId, data) {
 
   el.innerHTML = `<div class="menu-categories">
     ${data.categories.map(cat => `
-      <div class="menu-category">
-        <h3 class="menu-category-title">${escHtml(cat.title)}</h3>
-        <div class="menu-items-grid">
-          ${cat.items.map(item => `
-            <div class="menu-item">
-              <div class="menu-item-info">
-                <div class="menu-item-name">${escHtml(item.name)}</div>
-                ${item.desc ? `<div class="menu-item-desc">${escHtml(item.desc)}</div>` : ''}
+      <div class="menu-category-redesign">
+        ${cat.image ? `
+        <div class="menu-cat-image">
+          <img src="${escHtml(cat.image)}" alt="${escHtml(cat.title)}" loading="lazy" />
+        </div>` : ''}
+        <div class="menu-cat-content">
+          <h3 class="menu-category-title">${escHtml(cat.title)}</h3>
+          <div class="menu-items-grid">
+            ${cat.items.map(item => `
+              <div class="menu-item">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">${escHtml(item.name)}</div>
+                  ${item.desc ? `<div class="menu-item-desc">${escHtml(item.desc)}</div>` : ''}
+                </div>
+                <div class="menu-item-price">${escHtml(item.price)}</div>
               </div>
-              <div class="menu-item-price">${escHtml(item.price)}</div>
-            </div>
-          `).join('')}
+            `).join('')}
+          </div>
         </div>
       </div>
     `).join('')}
@@ -494,6 +516,18 @@ function initFormspree() {
       btn.textContent = originalText;
       btn.disabled = false;
     }
+  });
+}
+
+/* ---------------------------------------------------------- */
+/*  HERO CTA3 — TAGESMENÜ SHORTCUT                            */
+/* ---------------------------------------------------------- */
+function initHeroCta3() {
+  const cta3 = document.getElementById('hero-cta3');
+  if (!cta3) return;
+  cta3.addEventListener('click', e => {
+    // Switch to tagesmenü tab after scrolling
+    setTimeout(() => switchTab('tagesmenue'), 400);
   });
 }
 
