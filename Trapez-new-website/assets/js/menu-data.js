@@ -12,38 +12,9 @@ const menuData = {
     speisekarte: {
       categories: [
         {
-          id: "suppen",
-          title: "Zuppe / Suppen",
-          items: [
-            { name: "Minestrone Maison", desc: "Hausgemachte Gemüsesuppe", price: "Fr. 8.50" },
-            { name: "Tomatencrèmesuppe", desc: "Cremige Tomatensuppe mit Basilikum", price: "Fr. 8.00" },
-            { name: "Bouillon mit Ei", desc: "Klare Bouillon mit pochiertem Ei", price: "Fr. 8.00" },
-            { name: "Tortelloni in Brodo", desc: "Hausgemachte Tortelloni in Fleischbrühe", price: "Fr. 8.50" }
-          ]
-        },
-        {
-          id: "salate",
-          title: "Insalate / Salate",
-          items: [
-            { name: "Insalata Mista", desc: "Gemischter Salat mit Hausdressing", price: "Fr. 9.00" },
-            { name: "Insalata Caprese", desc: "Tomaten, Mozzarella, Basilikum, Olivenöl", price: "Fr. 14.50" },
-            { name: "Rucola e Parmigiano", desc: "Rucola, Parmesanspäne, Kirschtomaten", price: "Fr. 15.50" },
-            { name: "Caesar Salat", desc: "Römersalat, Parmesan, Croutons, Caesar-Dressing", price: "Fr. 16.50" }
-          ]
-        },
-        {
-          id: "antipasti",
-          title: "Antipasti / Vorspeisen",
-          items: [
-            { name: "Antipasto Misto", desc: "Gemischte italienische Vorspeisen", price: "Fr. 18.50" },
-            { name: "Carpaccio di Manzo", desc: "Hauchdünnes Rindfleisch, Rucola, Parmesan", price: "Fr. 19.50" },
-            { name: "Bruschetta al Pomodoro", desc: "Geröstetes Brot mit Tomaten und Basilikum", price: "Fr. 9.50" },
-            { name: "Burrata con Prosciutto", desc: "Frische Burrata mit Parmaschinken", price: "Fr. 21.00" }
-          ]
-        },
-        {
           id: "pizza",
           title: "Pizze / Pizza",
+          image: "assets/images/speisekarte/Margherita.png",
           items: [
             { name: "Margherita", desc: "Tomatensauce, Mozzarella, Basilikum", price: "Fr. 16.50" },
             { name: "Napoli", desc: "Tomatensauce, Mozzarella, Sardellen, Kapern", price: "Fr. 18.50" },
@@ -58,6 +29,7 @@ const menuData = {
         {
           id: "pasta",
           title: "Pasta",
+          image: "assets/images/speisekarte/pasta.png",
           items: [
             { name: "Spaghetti Bolognese", desc: "Klassische Fleischsauce nach Hausrezept", price: "Fr. 19.50" },
             { name: "Penne all'Arrabbiata", desc: "Scharfe Tomatensauce mit Knoblauch", price: "Fr. 17.50" },
@@ -70,6 +42,7 @@ const menuData = {
         {
           id: "fleisch",
           title: "Carni / Fleisch",
+          image: "assets/images/speisekarte/carni.png",
           items: [
             { name: "Saltimbocca alla Romana", desc: "Kalbsschnitzel mit Salbei und Parmaschinken", price: "Fr. 34.50" },
             { name: "Tagliata di Manzo", desc: "Gegrilltes Rindsentrecôte, Rucola, Parmesan", price: "Fr. 38.50" },
@@ -80,6 +53,7 @@ const menuData = {
         {
           id: "fisch",
           title: "Pesce / Fisch",
+          image: "assets/images/speisekarte/fish.png",
           items: [
             { name: "Branzino al Forno", desc: "Ofengebackener Wolfsbarsch mit Zitronen-Kräutern", price: "Fr. 36.50" },
             { name: "Gamberi all'Aglio", desc: "Riesengarnelen in Knoblauch-Olivenöl-Sauce", price: "Fr. 34.50" },
@@ -87,8 +61,42 @@ const menuData = {
           ]
         },
         {
+          id: "suppen",
+          title: "Zuppe / Suppen",
+          image: "assets/images/speisekarte/Suppe-new.png",
+          items: [
+            { name: "Minestrone Maison", desc: "Hausgemachte Gemüsesuppe", price: "Fr. 8.50" },
+            { name: "Tomatencrèmesuppe", desc: "Cremige Tomatensuppe mit Basilikum", price: "Fr. 8.00" },
+            { name: "Bouillon mit Ei", desc: "Klare Bouillon mit pochiertem Ei", price: "Fr. 8.00" },
+            { name: "Tortelloni in Brodo", desc: "Hausgemachte Tortelloni in Fleischbrühe", price: "Fr. 8.50" }
+          ]
+        },
+        {
+          id: "salate",
+          title: "Insalate / Salate",
+          image: "assets/images/speisekarte/ceaser salad.png",
+          items: [
+            { name: "Insalata Mista", desc: "Gemischter Salat mit Hausdressing", price: "Fr. 9.00" },
+            { name: "Insalata Caprese", desc: "Tomaten, Mozzarella, Basilikum, Olivenöl", price: "Fr. 14.50" },
+            { name: "Rucola e Parmigiano", desc: "Rucola, Parmesanspäne, Kirschtomaten", price: "Fr. 15.50" },
+            { name: "Caesar Salat", desc: "Römersalat, Parmesan, Croutons, Caesar-Dressing", price: "Fr. 16.50" }
+          ]
+        },
+        {
+          id: "antipasti",
+          title: "Antipasti / Vorspeisen",
+          image: "assets/images/speisekarte/vorspeise.png",
+          items: [
+            { name: "Antipasto Misto", desc: "Gemischte italienische Vorspeisen", price: "Fr. 18.50" },
+            { name: "Carpaccio di Manzo", desc: "Hauchdünnes Rindfleisch, Rucola, Parmesan", price: "Fr. 19.50" },
+            { name: "Bruschetta al Pomodoro", desc: "Geröstetes Brot mit Tomaten und Basilikum", price: "Fr. 9.50" },
+            { name: "Burrata con Prosciutto", desc: "Frische Burrata mit Parmaschinken", price: "Fr. 21.00" }
+          ]
+        },
+        {
           id: "dolci",
           title: "Dolci / Dessert",
+          image: "assets/images/speisekarte/tiramisu-dessert.png",
           items: [
             { name: "Tiramisù", desc: "Klassisches hausgemachtes Tiramisù", price: "Fr. 9.50" },
             { name: "Panna Cotta", desc: "Mit Beerencoulis", price: "Fr. 9.00" },
@@ -102,6 +110,7 @@ const menuData = {
       categories: [
         {
           id: "aperitivo",
+          image: "assets/images/Getränke/Aperol Spritz.png",
           title: "Aperitivo",
           items: [
             { name: "Aperol Spritz", desc: "Aperol, Prosecco, Soda", price: "Fr. 12.00" },
@@ -112,6 +121,7 @@ const menuData = {
         },
         {
           id: "weine",
+          image: "assets/images/Getränke/Vino della Casa Bianco.png",
           title: "Vini / Weine",
           items: [
             { name: "Vino della Casa Bianco", desc: "Hauswein weiss, 1dl", price: "Fr. 5.50" },
@@ -123,6 +133,7 @@ const menuData = {
         },
         {
           id: "bier",
+          image: "assets/images/Getränke/Bier vom Fass.png",
           title: "Birra / Bier",
           items: [
             { name: "Bier vom Fass", desc: "0.3 lt", price: "Fr. 4.50" },
@@ -133,6 +144,7 @@ const menuData = {
         },
         {
           id: "mineral",
+          image: "assets/images/Getränke/Hausgemachter Zitronensirup.png",
           title: "Acqua / Mineralwasser",
           items: [
             { name: "Hausgemachter Zitronensirup", desc: "Mit Mineralwasser", price: "Fr. 4.50" },
@@ -143,6 +155,7 @@ const menuData = {
         },
         {
           id: "kaffee",
+          image: "assets/images/Getränke/Espresso.png",
           title: "Caffè / Kaffee",
           items: [
             { name: "Espresso", desc: "Einzeln", price: "Fr. 3.50" },
@@ -215,38 +228,9 @@ const menuData = {
     speisekarte: {
       categories: [
         {
-          id: "suppen",
-          title: "Soups",
-          items: [
-            { name: "Minestrone Maison", desc: "Homemade vegetable soup", price: "Fr. 8.50" },
-            { name: "Cream of Tomato", desc: "Creamy tomato soup with basil", price: "Fr. 8.00" },
-            { name: "Bouillon with Egg", desc: "Clear broth with poached egg", price: "Fr. 8.00" },
-            { name: "Tortelloni in Brodo", desc: "Homemade tortelloni in meat broth", price: "Fr. 8.50" }
-          ]
-        },
-        {
-          id: "salate",
-          title: "Salads",
-          items: [
-            { name: "Mixed Salad", desc: "Mixed greens with house dressing", price: "Fr. 9.00" },
-            { name: "Caprese", desc: "Tomatoes, mozzarella, basil, olive oil", price: "Fr. 14.50" },
-            { name: "Rucola & Parmesan", desc: "Rocket, parmesan shavings, cherry tomatoes", price: "Fr. 15.50" },
-            { name: "Caesar Salad", desc: "Romaine, parmesan, croutons, caesar dressing", price: "Fr. 16.50" }
-          ]
-        },
-        {
-          id: "antipasti",
-          title: "Antipasti / Starters",
-          items: [
-            { name: "Antipasto Misto", desc: "Mixed Italian starters", price: "Fr. 18.50" },
-            { name: "Beef Carpaccio", desc: "Paper-thin beef, rocket, parmesan", price: "Fr. 19.50" },
-            { name: "Bruschetta al Pomodoro", desc: "Toasted bread with tomatoes and basil", price: "Fr. 9.50" },
-            { name: "Burrata & Prosciutto", desc: "Fresh burrata with Parma ham", price: "Fr. 21.00" }
-          ]
-        },
-        {
           id: "pizza",
           title: "Pizza",
+          image: "assets/images/speisekarte/Margherita.png",
           items: [
             { name: "Margherita", desc: "Tomato sauce, mozzarella, basil", price: "Fr. 16.50" },
             { name: "Napoli", desc: "Tomato sauce, mozzarella, anchovies, capers", price: "Fr. 18.50" },
@@ -261,6 +245,7 @@ const menuData = {
         {
           id: "pasta",
           title: "Pasta",
+          image: "assets/images/speisekarte/pasta.png",
           items: [
             { name: "Spaghetti Bolognese", desc: "Classic meat sauce from house recipe", price: "Fr. 19.50" },
             { name: "Penne all'Arrabbiata", desc: "Spicy tomato sauce with garlic", price: "Fr. 17.50" },
@@ -273,6 +258,7 @@ const menuData = {
         {
           id: "fleisch",
           title: "Meat",
+          image: "assets/images/speisekarte/carni.png",
           items: [
             { name: "Saltimbocca alla Romana", desc: "Veal escalope with sage and Parma ham", price: "Fr. 34.50" },
             { name: "Tagliata di Manzo", desc: "Grilled beef sirloin, rocket, parmesan", price: "Fr. 38.50" },
@@ -283,6 +269,7 @@ const menuData = {
         {
           id: "fisch",
           title: "Fish",
+          image: "assets/images/speisekarte/fish.png",
           items: [
             { name: "Baked Sea Bass", desc: "Oven-baked sea bass with lemon and herbs", price: "Fr. 36.50" },
             { name: "Gamberi all'Aglio", desc: "King prawns in garlic olive oil sauce", price: "Fr. 34.50" },
@@ -290,8 +277,42 @@ const menuData = {
           ]
         },
         {
+          id: "suppen",
+          title: "Soups",
+          image: "assets/images/speisekarte/Suppe-new.png",
+          items: [
+            { name: "Minestrone Maison", desc: "Homemade vegetable soup", price: "Fr. 8.50" },
+            { name: "Cream of Tomato", desc: "Creamy tomato soup with basil", price: "Fr. 8.00" },
+            { name: "Bouillon with Egg", desc: "Clear broth with poached egg", price: "Fr. 8.00" },
+            { name: "Tortelloni in Brodo", desc: "Homemade tortelloni in meat broth", price: "Fr. 8.50" }
+          ]
+        },
+        {
+          id: "salate",
+          title: "Salads",
+          image: "assets/images/speisekarte/ceaser salad.png",
+          items: [
+            { name: "Mixed Salad", desc: "Mixed greens with house dressing", price: "Fr. 9.00" },
+            { name: "Caprese", desc: "Tomatoes, mozzarella, basil, olive oil", price: "Fr. 14.50" },
+            { name: "Rucola & Parmesan", desc: "Rocket, parmesan shavings, cherry tomatoes", price: "Fr. 15.50" },
+            { name: "Caesar Salad", desc: "Romaine, parmesan, croutons, caesar dressing", price: "Fr. 16.50" }
+          ]
+        },
+        {
+          id: "antipasti",
+          title: "Antipasti / Starters",
+          image: "assets/images/speisekarte/vorspeise.png",
+          items: [
+            { name: "Antipasto Misto", desc: "Mixed Italian starters", price: "Fr. 18.50" },
+            { name: "Beef Carpaccio", desc: "Paper-thin beef, rocket, parmesan", price: "Fr. 19.50" },
+            { name: "Bruschetta al Pomodoro", desc: "Toasted bread with tomatoes and basil", price: "Fr. 9.50" },
+            { name: "Burrata & Prosciutto", desc: "Fresh burrata with Parma ham", price: "Fr. 21.00" }
+          ]
+        },
+        {
           id: "dolci",
           title: "Desserts",
+          image: "assets/images/speisekarte/tiramisu-dessert.png",
           items: [
             { name: "Tiramisù", desc: "Classic homemade tiramisù", price: "Fr. 9.50" },
             { name: "Panna Cotta", desc: "With berry coulis", price: "Fr. 9.00" },
@@ -305,6 +326,7 @@ const menuData = {
       categories: [
         {
           id: "aperitivo",
+          image: "assets/images/Getränke/Aperol Spritz.png",
           title: "Aperitivo",
           items: [
             { name: "Aperol Spritz", desc: "Aperol, Prosecco, Soda", price: "Fr. 12.00" },
@@ -315,6 +337,7 @@ const menuData = {
         },
         {
           id: "weine",
+          image: "assets/images/Getränke/Vino della Casa Bianco.png",
           title: "Wines",
           items: [
             { name: "House White Wine", desc: "1dl", price: "Fr. 5.50" },
@@ -326,6 +349,7 @@ const menuData = {
         },
         {
           id: "bier",
+          image: "assets/images/Getränke/Bier vom Fass.png",
           title: "Beer",
           items: [
             { name: "Draft Beer", desc: "0.3 lt", price: "Fr. 4.50" },
@@ -336,6 +360,7 @@ const menuData = {
         },
         {
           id: "mineral",
+          image: "assets/images/Getränke/Hausgemachter Zitronensirup.png",
           title: "Water & Soft Drinks",
           items: [
             { name: "House Lemonade", desc: "With mineral water", price: "Fr. 4.50" },
@@ -346,6 +371,7 @@ const menuData = {
         },
         {
           id: "kaffee",
+          image: "assets/images/Getränke/Espresso.png",
           title: "Coffee & Tea",
           items: [
             { name: "Espresso", desc: "Single shot", price: "Fr. 3.50" },
@@ -431,7 +457,8 @@ const translations = {
       tagline: "Authentische Küche. Unvergessliche Momente.",
       subtitle: "Willkommen im Restaurant Trapez — Wo jedes Gericht eine Geschichte erzählt",
       cta1: "Tisch Reservieren",
-      cta2: "Speisekarte"
+      cta2: "Speisekarte",
+      cta3: "Tagesmenü"
     },
     angebot: {
       title: "Unser Angebot",
@@ -488,10 +515,10 @@ const translations = {
       },
       reviewsTitle: "Was unsere Gäste sagen",
       reviews: [
-        { name: "Sarah M.", text: "Absolut hervorragend! Die Pizza war genau so, wie man sie in Neapel erwarten würde. Die Atmosphäre ist warm und einladend, das Personal äußerst freundlich. Komme definitiv wieder!", rating: 5 },
-        { name: "Thomas K.", text: "Wir haben hier unseren Hochzeitstag gefeiert. Die Küche war fantastisch, der Service tadellos. Das Tagesmenü ist ein echtes Schnäppchen und schmeckt hervorragend.", rating: 5 },
-        { name: "Maria L.", text: "Das beste Restaurant in Reinach! Die Pasta ist hausgemacht, man schmeckt die Qualität der Zutaten. Wir kommen jeden Monat und werden nie enttäuscht.", rating: 5 },
-        { name: "Andreas B.", text: "Großartige Atmosphäre, noch besseres Essen. Der Ober hat uns perfekt beraten. Das Saltimbocca war einfach göttlich. Sehr zu empfehlen!", rating: 4 }
+        { name: "Stefan Baumann", text: "Sehr gute Küche, freundliches Personal. Mittagsmenü inkl. Dessert und Kaffee – Preis-Leistung sehr gut!", rating: 5 },
+        { name: "Edgar Spies", text: "Rundum begeistert! Atmosphäre warm und einladend, freundliches Team. Von knuspriger Pizza bis delikaten Cordon bleu – jeder Biss war ein Genuss. Sehr empfehlenswert!", rating: 5 },
+        { name: "Timo Feulner", text: "Absolut bestes Restaurant in Reinach. Grosse Auswahl zu fairen Preisen, super netter Service und immer ein gratis Aperitif. Das selbstgemachte Schoggimousse ist das beste weit und breit!", rating: 5 },
+        { name: "Avni Hamiti", text: "Wir haben hier den Geburtstag meines Vaters gefeiert – wir waren wirklich sehr zufrieden und empfehlen es jedem. Ein unglaublicher Tag, danke!", rating: 5 }
       ]
     },
     footer: {
@@ -527,7 +554,8 @@ const translations = {
       tagline: "Authentic Cuisine. Unforgettable Moments.",
       subtitle: "Welcome to Restaurant Trapez — Where every dish tells a story",
       cta1: "Reserve a Table",
-      cta2: "View Menu"
+      cta2: "View Menu",
+      cta3: "Daily Menu"
     },
     angebot: {
       title: "Our Menu",
@@ -584,10 +612,10 @@ const translations = {
       },
       reviewsTitle: "What Our Guests Say",
       reviews: [
-        { name: "Sarah M.", text: "Absolutely outstanding! The pizza was exactly as you'd expect in Naples. The atmosphere is warm and inviting, the staff extremely friendly. Definitely coming back!", rating: 5 },
-        { name: "Thomas K.", text: "We celebrated our wedding anniversary here. The food was fantastic, the service impeccable. The daily menu is a real bargain and tastes superb.", rating: 5 },
-        { name: "Maria L.", text: "The best restaurant in Reinach! The pasta is homemade, you can taste the quality of the ingredients. We come every month and are never disappointed.", rating: 5 },
-        { name: "Andreas B.", text: "Great atmosphere, even better food. The waiter gave us perfect advice. The Saltimbocca was simply divine. Highly recommended!", rating: 4 }
+        { name: "Stefan Baumann", text: "Excellent kitchen, friendly staff. Lunch menu including dessert and coffee – great value for money!", rating: 5 },
+        { name: "Edgar Spies", text: "Absolutely thrilled! Warm and inviting atmosphere, friendly team. From crispy pizza to exquisite Cordon Bleu – every bite was a delight. Highly recommended!", rating: 5 },
+        { name: "Timo Feulner", text: "Absolutely the best restaurant in Reinach. Great selection at fair prices, super friendly service and always a free aperitif. The homemade chocolate mousse is the best around!", rating: 5 },
+        { name: "Avni Hamiti", text: "We celebrated my father's birthday here – we were truly very happy and recommend it to everyone. An incredible day, thank you!", rating: 5 }
       ]
     },
     footer: {
@@ -608,6 +636,195 @@ const translations = {
       subtitle: "Page Not Found",
       text: "The page you are looking for does not exist.",
       back: "Back to Home"
+    }
+  }
+  ,
+  it: {
+    nav: {
+      home: "Home",
+      angebot: "Menu",
+      reservieren: "Prenota",
+      ambiente: "Ambiente",
+      ueberUns: "Chi Siamo",
+      kontakt: "Contatti"
+    },
+    hero: {
+      tagline: "Cucina autentica. Momenti indimenticabili.",
+      subtitle: "Benvenuti al Ristorante Trapez — Dove ogni piatto racconta una storia",
+      cta1: "Prenota un Tavolo",
+      cta2: "Menu",
+      cta3: "Menu del Giorno"
+    },
+    angebot: {
+      title: "Il Nostro Menu",
+      tabs: {
+        speisekarte: "Menu",
+        getraenkkarte: "Bevande",
+        aktuell: "Speciali",
+        tagesmenue: "Menu del Giorno"
+      }
+    },
+    reservieren: {
+      title: "Prenota un Tavolo",
+      subtitle: "Siamo lieti di accogliervi. Prenota il tuo tavolo ora.",
+      fullname: "Nome Completo",
+      phone: "Telefono",
+      email: "Indirizzo Email",
+      guests: "Numero di Ospiti",
+      date: "Data",
+      time: "Orario",
+      message: "Richieste speciali (opzionale)",
+      button: "Prenota Ora",
+      note: "Riceverai una conferma via email.",
+      required: "Campo obbligatorio"
+    },
+    ambiente: {
+      title: "Ambiente",
+      subtitle: "Immergetevi nell'atmosfera calda ed elegante del nostro ristorante"
+    },
+    ueberUns: {
+      title: "Chi Siamo",
+      subtitle: "La Nostra Storia",
+      text1: "Il Ristorante Trapez è da oltre 10 anni un punto di riferimento a Reinach. Uniamo l'ospitalità svizzera alla cucina italiana autentica — ingredienti freschi, ricette tradizionali e passione in ogni piatto.",
+      text2: "Il nostro chef crea ogni giorno piatti che portano i migliori sapori d'Italia sulla vostra tavola. Dalle classiche pizze cotte nel forno a legna alla pasta fatta a mano e alle specialità di pesce fresco.",
+      text3: "Accogliamo i nostri ospiti ogni sera con un aperitivo della casa e ci impegniamo a regalarvi una serata indimenticabile.",
+      ownerCaption: "Giuseppe Trapez — Patron & Chef"
+    },
+    kontakt: {
+      title: "Contatti",
+      subtitle: "Siamo qui per voi",
+      address: "Indirizzo",
+      hours: "Orari di Apertura",
+      phone: "Telefono",
+      email: "Email",
+      hoursDetail: [
+        "Lunedì – Venerdì: 10:00 – 14:00 | 17:00 – 23:00",
+        "Sabato: 17:00 – 23:00",
+        "Domenica: 17:00 – 22:30"
+      ],
+      stats: {
+        rating: { value: "4.5★", label: "Valutazione Media" },
+        customers: { value: "500+", label: "Ospiti Soddisfatti" },
+        reviews: { value: "250+", label: "Recensioni" },
+        years: { value: "10+", label: "Anni di Esperienza" }
+      },
+      reviewsTitle: "Cosa dicono i nostri ospiti",
+      reviews: [
+        { name: "Stefan Baumann", text: "Cucina eccellente, personale cordiale. Menu del pranzo con dessert e caffè – ottimo rapporto qualità-prezzo!", rating: 5 },
+        { name: "Edgar Spies", text: "Assolutamente entusiasta! Atmosfera calda e accogliente, team amichevole. Dalla pizza croccante al delizioso Cordon Bleu – ogni boccone era una delizia. Consigliato vivamente!", rating: 5 },
+        { name: "Timo Feulner", text: "Assolutamente il miglior ristorante di Reinach. Grande scelta a prezzi equi, servizio super cordiale e sempre un aperitivo in omaggio. La mousse al cioccolato fatta in casa è la migliore in assoluto!", rating: 5 },
+        { name: "Avni Hamiti", text: "Abbiamo festeggiato il compleanno di mio padre qui – eravamo davvero molto soddisfatti e lo consigliamo a tutti. Una giornata incredibile, grazie!", rating: 5 }
+      ]
+    },
+    footer: {
+      tagline: "Cucina autentica da oltre 10 anni",
+      copyright: "© 2025 Restaurant Trapez, Reinach. Tutti i diritti riservati.",
+      legal: "Note Legali & Privacy"
+    },
+    loading: { text: "Benvenuti" },
+    thankyou: {
+      title: "Grazie per la sua prenotazione!",
+      text: "Non vediamo l'ora di accogliervi. Una conferma è stata inviata al vostro indirizzo email.",
+      back: "Torna alla Home"
+    },
+    notfound: {
+      title: "Ops! Questa pagina non esiste.",
+      text: "La pagina che stai cercando non è stata trovata.",
+      back: "Torna alla Home"
+    }
+  },
+  fr: {
+    nav: {
+      home: "Accueil",
+      angebot: "Menu",
+      reservieren: "Réserver",
+      ambiente: "Ambiance",
+      ueberUns: "À Propos",
+      kontakt: "Contact"
+    },
+    hero: {
+      tagline: "Cuisine authentique. Moments inoubliables.",
+      subtitle: "Bienvenue au Restaurant Trapez — Où chaque plat raconte une histoire",
+      cta1: "Réserver une Table",
+      cta2: "Voir la Carte",
+      cta3: "Menu du Jour"
+    },
+    angebot: {
+      title: "Notre Menu",
+      tabs: {
+        speisekarte: "Carte",
+        getraenkkarte: "Boissons",
+        aktuell: "Spécialités",
+        tagesmenue: "Menu du Jour"
+      }
+    },
+    reservieren: {
+      title: "Réserver une Table",
+      subtitle: "Nous vous attendons avec impatience. Réservez votre table maintenant.",
+      fullname: "Nom Complet",
+      phone: "Numéro de Téléphone",
+      email: "Adresse Email",
+      guests: "Nombre de Convives",
+      date: "Date",
+      time: "Heure",
+      message: "Demandes spéciales (optionnel)",
+      button: "Réserver Maintenant",
+      note: "Vous recevrez une confirmation par email.",
+      required: "Champ obligatoire"
+    },
+    ambiente: {
+      title: "Ambiance",
+      subtitle: "Plongez dans l'atmosphère chaleureuse et élégante de notre restaurant"
+    },
+    ueberUns: {
+      title: "À Propos",
+      subtitle: "Notre Histoire",
+      text1: "Le Restaurant Trapez est depuis plus de 10 ans une institution à Reinach. Nous allions l'hospitalité suisse à la cuisine italienne authentique — ingrédients frais, recettes traditionnelles et passion dans chaque assiette.",
+      text2: "Notre chef crée chaque jour des plats qui apportent les meilleures saveurs d'Italie à votre table. Des pizzas classiques au feu de bois aux pâtes fraîches maison et spécialités de poisson.",
+      text3: "Nous accueillons nos hôtes chaque soir avec un apéritif maison et nous réjouissons de vous offrir une soirée inoubliable.",
+      ownerCaption: "Giuseppe Trapez — Patron & Chef"
+    },
+    kontakt: {
+      title: "Contact",
+      subtitle: "Nous sommes là pour vous",
+      address: "Adresse",
+      hours: "Horaires d'Ouverture",
+      phone: "Téléphone",
+      email: "Email",
+      hoursDetail: [
+        "Lundi – Vendredi : 10h00 – 14h00 | 17h00 – 23h00",
+        "Samedi : 17h00 – 23h00",
+        "Dimanche : 17h00 – 22h30"
+      ],
+      stats: {
+        rating: { value: "4.5★", label: "Note Moyenne" },
+        customers: { value: "500+", label: "Clients Satisfaits" },
+        reviews: { value: "250+", label: "Avis Clients" },
+        years: { value: "10+", label: "Ans d'Expérience" }
+      },
+      reviewsTitle: "Ce que disent nos clients",
+      reviews: [
+        { name: "Stefan Baumann", text: "Excellente cuisine, personnel amical. Menu du midi avec dessert et café – très bon rapport qualité-prix !", rating: 5 },
+        { name: "Edgar Spies", text: "Absolument ravi ! Atmosphère chaleureuse et accueillante, équipe sympathique. De la pizza croustillante au délicieux Cordon Bleu – chaque bouchée était un régal. Fortement recommandé !", rating: 5 },
+        { name: "Timo Feulner", text: "Absolument le meilleur restaurant de Reinach. Grand choix à des prix équitables, service très sympathique et toujours un apéritif offert. La mousse au chocolat maison est la meilleure !", rating: 5 },
+        { name: "Avni Hamiti", text: "Nous avons fêté l'anniversaire de mon père ici – nous étions vraiment très satisfaits et le recommandons à tous. Une journée incroyable, merci !", rating: 5 }
+      ]
+    },
+    footer: {
+      tagline: "Cuisine authentique depuis plus de 10 ans",
+      copyright: "© 2025 Restaurant Trapez, Reinach. Tous droits réservés.",
+      legal: "Mentions Légales & Confidentialité"
+    },
+    loading: { text: "Bienvenue" },
+    thankyou: {
+      title: "Merci pour votre réservation !",
+      text: "Nous nous réjouissons de votre visite. Une confirmation a été envoyée à votre adresse email.",
+      back: "Retour à l'Accueil"
+    },
+    notfound: {
+      title: "Oups ! Cette page n'existe pas.",
+      text: "La page que vous recherchez est introuvable.",
+      back: "Retour à l'Accueil"
     }
   }
 };
